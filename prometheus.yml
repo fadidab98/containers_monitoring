@@ -5,4 +5,6 @@ scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
       - targets: ['cadvisor:8081']
-
+  - job_name: 'jenkins'
+    static_configs:
+      - targets: ['e4ff7720f799:8080']
