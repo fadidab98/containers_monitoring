@@ -8,3 +8,4 @@ scrape_configs:
   - job_name: 'jenkins'
     static_configs:
       - targets: ['jenkins-cicd:8080']
+    metrics_path: /metrics/_VUaxxPpEfiAHC76pwFQRXWFyPq0xRiE2IrLHRuVPckT2TCRRMXWnIAfqmLF4edR
