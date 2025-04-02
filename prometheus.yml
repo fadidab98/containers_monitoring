@@ -4,7 +4,7 @@ global:
 scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['cadvisor:8081']  # Use internal port 8080, not 8081
+      - targets: ['cadvisor:8080']  # Use internal port 8080, not 8081
   - job_name: 'jenkins'
     scheme: https  # Explicitly set to HTTPS
     static_configs:
