@@ -5,7 +5,7 @@ scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
       - targets: ['cadvisor:8081']
-  - job_name: 'jenkins-cicd'
+  - job_name: 'jenkins'
     static_configs:
-      - targets: ['jenkins-cicd:8080']
+      - targets: ['jenkins.serp24.online']
     metrics_path: /metrics/iZg8Ya_JFkkUrQ-OE-7JtI1JU5RAnkd2yJgweZOezpF9Znab9FXcFgyg_rzCj4SI
