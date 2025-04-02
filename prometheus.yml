@@ -4,8 +4,9 @@ global:
 scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['cadvisor:8081']
+      - targets: ['cadvisor:8081']  # Use internal port 8080, not 8081
   - job_name: 'jenkins'
+    scheme: https  # Explicitly set to HTTPS
     static_configs:
-      - targets: ['jenkins.serp24.online']
+      - targets: ['jenkins.serp24.online:443']  # Use 443 for HTTPS
     metrics_path: /metrics/iZg8Ya_JFkkUrQ-OE-7JtI1JU5RAnkd2yJgweZOezpF9Znab9FXcFgyg_rzCj4SI
