@@ -9,4 +9,4 @@ scrape_configs:
     scheme: https  # Explicitly set to HTTPS
     static_configs:
       - targets: ['jenkins.serp24.online:443']  # Use 443 for HTTPS
-    metrics_path: /metrics/EKBMM3wvKzL4F57jTKvnsvZpwK9X7JW_JK8hoFu7i0mM6UGSAUMAChQ6tLo4hMzK
+    metrics_path: /metrics/ihtnl81wTeVq91LEb2quPZwQktMJ9qzS82Y0P_Xw0TSY2wx2zRt_tzxmHnWUEQ6I
