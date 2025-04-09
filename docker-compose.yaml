@@ -42,7 +42,9 @@ services:
              ls -l /sites-enabled/jenkins.serp24.online &&
              nginx -t || echo 'NGINX test failed'" &&
              systemctl restart nginx
-    # Runs once and exits
+
+    networks:
+     - monitoring
 volumes:
   prometheus_data:
   grafana_data:
