@@ -30,21 +30,20 @@ services:
       - 8081:8081
     networks:
       - monitoring
+
   nginx-config:
     image: alpine:latest
     volumes:
-      - ./nginx.conf:/nginx.conf:ro
+      - ./nginx-monitoring.conf:/nginx-monitoring.conf:ro
       - /etc/nginx/sites-available:/sites-available
       - /etc/nginx/sites-enabled:/sites-enabled
     command: >
-      sh -c "cp -f /nginx.conf /sites-available/jenkins.serp24.online &&
-             ln -sf /etc/nginx/sites-available/jenkins.serp24.online /sites-enabled/jenkins.serp24.online &&
-             ls -l /sites-enabled/jenkins.serp24.online &&
-             nginx -t || echo 'NGINX test failed'" &&
-             systemctl restart nginx
+      sh -c "cp -f /nginx-monitoring.conf /sites-available/monitoring.serp24.online &&
+             ln -sf /sites-available/monitoring.serp24.online /sites-enabled/monitoring.serp24.online &&
+             ls -l /sites-enabled/monitoring.serp24.online &&
+             nginx -t || echo 'NGINX test failed' &&
+             systemctl restart nginx || echo 'NGINX restart failed (likely not running on host)'"
 
-    networks:
-     - monitoring
 volumes:
   prometheus_data:
   grafana_data:
