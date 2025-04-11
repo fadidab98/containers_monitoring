@@ -40,9 +40,7 @@ services:
     command: >
       sh -c "cp -f /nginx-monitoring.conf /sites-available/monitoring.serp24.online &&
              ln -sf /sites-available/monitoring.serp24.online /sites-enabled/monitoring.serp24.online &&
-             ls -l /sites-enabled/monitoring.serp24.online &&
-             nginx -t || echo 'NGINX test failed' &&
-             systemctl restart nginx || echo 'NGINX restart failed (likely not running on host)'"
+             ls -l /sites-enabled/monitoring.serp24.online"
 
 volumes:
   prometheus_data:
