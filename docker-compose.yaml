@@ -31,7 +31,7 @@ services:
     networks:
       - monitoring
 
-  nginx-config:
+  nginx-config-monitor:
     image: alpine:latest
     volumes:
       - ./nginx-monitoring.conf:/nginx-monitoring.conf:ro
